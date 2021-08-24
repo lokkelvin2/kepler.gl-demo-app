@@ -42,11 +42,13 @@ import {
 
 import {loadCloudMap} from 'kepler.gl/actions';
 import {CLOUD_PROVIDERS} from './cloud-providers';
-
+import {MapContainerFactory} from 'kepler.gl/components';
+import CustomMapContainerFactory from './components/custom-map-container';
 const KeplerGl = require('kepler.gl/components').injectComponents([
+  [MapContainerFactory, CustomMapContainerFactory],
   replaceLoadDataModal(),
   replaceMapControl(),
-  replacePanelHeader()
+  replacePanelHeader(),
 ]);
 
 // Sample data
@@ -396,14 +398,14 @@ class App extends Component {
             node ? (this.root = node) : null;
           }}
         >
-          <Banner
+          {/* <Banner
             show={this.state.showBanner}
             height={BannerHeight}
             bgColor="#2E7CF6"
             onClose={this._hideBanner}
           >
             <Announcement onDisable={this._disableBanner} />
-          </Banner>
+          </Banner> */}
           <div
             style={{
               transition: 'margin 1s, height 1s',
