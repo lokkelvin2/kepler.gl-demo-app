@@ -1,6 +1,9 @@
 name: Node build + artifact upload
 
-on: push
+on: 
+  push:
+    branches:
+      -ci-actions
 
 jobs:
   build_and_test:
