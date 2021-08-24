@@ -96,6 +96,34 @@ const GlobalStyle = styled.div`
   }
 `;
 
+const mapStyles = [{
+  id: 'liberty',
+  label: 'Osm-Liberty',
+  url: 'http://localhost:4000/libertystyle.json'
+},
+{
+  id: 'basic',
+  label: 'basic',
+  url: 'http://localhost:4000/basicstyle.json'
+},
+{
+  id: 'dark',
+  label: 'dark_matter',
+  url: 'http://localhost:4000/dark_matter.json'
+},
+{
+  id: 'positron',
+  label: 'positron',
+  url: 'http://localhost:4000/positron.json'
+},
+{
+  id: 'toner',
+  label: 'toner',
+  url: 'http://localhost:4000/toner.json'
+}
+];
+
+
 class App extends Component {
   state = {
     showBanner: false,
@@ -389,7 +417,7 @@ class App extends Component {
             <AutoSizer>
               {({height, width}) => (
                 <KeplerGl
-                  mapboxApiAccessToken={AUTH_TOKENS.MAPBOX_TOKEN}
+                  mapboxApiAccessToken=""
                   id="map"
                   /*
                    * Specify path to keplerGl state, because it is not mount at the root
@@ -397,10 +425,12 @@ class App extends Component {
                   getState={keplerGlGetState}
                   width={width}
                   height={height}
-                  cloudProviders={CLOUD_PROVIDERS}
+                  //cloudProviders={CLOUD_PROVIDERS}
                   localeMessages={messages}
-                  onExportToCloudSuccess={onExportFileSuccess}
-                  onLoadCloudMapSuccess={onLoadCloudMapSuccess}
+                  //onExportToCloudSuccess={onExportFileSuccess}
+                  //onLoadCloudMapSuccess={onLoadCloudMapSuccess}
+                  mapStyles={mapStyles}
+                  mapStylesReplaceDefault={true} 
                 />
               )}
             </AutoSizer>
