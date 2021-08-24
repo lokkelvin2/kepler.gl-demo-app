@@ -1,7 +1,5 @@
-# Demo App
-
-This is the src code of kepler.gl demo app. You can copy this folder out and run it locally.
-
+Ensure that a static server is hosting the various style.jsons and add the endpoint to mapstyles inside src/app.js
+TODO: fix a bug that prevents custom attribution from displaying.
 #### 1. Install
 
 ```sh
