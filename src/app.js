@@ -104,6 +104,11 @@ const mapStyles = [{
   url: 'http://localhost:4000/libertystyle.json'
 },
 {
+  id: 'liberty_contour',
+  label: 'Osm-Liberty W Contours',
+  url: 'http://localhost:4000/libertystyle_contour.json'
+},
+{
   id: 'basic',
   label: 'basic',
   url: 'http://localhost:4000/basicstyle.json'
